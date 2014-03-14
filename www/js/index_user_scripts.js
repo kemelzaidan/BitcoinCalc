@@ -7,13 +7,9 @@
  function register_event_handlers()
  {
     
-    
-/*         $(".uib_w_4").click(function(evt)
-        {
-            $('#btc2fiat').toogle(true);
-            $('#fiat2btc').toggle(false);
-        });
-*/
+        var btc_quotation = 628.88;
+     
+        $('.money_field').maskMoney();
         $("#to_fiat_button").click(function(evt)
         {
             $('#btc2fiat').show();
@@ -30,7 +26,7 @@
      
         $("#convert2btc_button").click(function(evt)
         {
-            var amount = $('#money_amount').val();
+            var amount = numeral($('#money_amount').val());
             $('#final_value').html(amount);
             $('#final_conv_block').show();
         });

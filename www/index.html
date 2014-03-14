@@ -37,6 +37,7 @@
 		<script type="application/javascript" src="app_framework/appframework.min.js"></script>
 		<script type="application/javascript" src="app_framework/appframework.ui.min.js"></script>
 		<script type="application/javascript" src="js/jquery.min.js"></script>
+        <script type="application/javascript" src="js/jquery.maskMoney.min.js"></script>
 		<script type="application/javascript" src="js/index_user_scripts.js"></script>
 		<script type="application/javascript" src="js/numeral.min.js"></script>
 	</head>
@@ -87,7 +88,7 @@
 										<div class="table-thing with-label widget uib_w_7 d-margins" data-uib="app_framework/input" data-ver="0">
 											<label class="narrow-control label-inline" for="btc_amount">BTC amount:</label>
 
-											<input class="wide-control" placeholder="type de amount" type="text" id="btc_amount">
+											<input class="wide-control money_field" placeholder="type de amount" type="text" id="btc_amount">
 										</div>
 										<div class="table-thing with-label widget uib_w_8 d-margins" data-uib="app_framework/radio_button_group" data-ver="0" data-child-name="af-group-0">
 											<label class="narrow-control label-inline">Group</label>
@@ -123,7 +124,7 @@
 										<div class="table-thing with-label widget uib_w_14 d-margins" data-uib="app_framework/input" data-ver="0">
 											<label class="narrow-control label-inline" for="money_amount">Money amount:</label>
 
-											<input class="wide-control" placeholder="Type the amount" type="text" id="money_amount">
+											<input class="wide-control money_field" placeholder="Type the amount" type="text" id="money_amount">
 										</div><a class="button widget uib_w_15 d-margins" data-uib="app_framework/button" data-ver="0" id="convert2btc_button">Convert</a><span class="uib_shim"></span>
 									</div>
 								</div>
@@ -159,5 +160,4 @@
 		</div>
 		<!-- /uwrap -->
 	</body>
-
 </html>
