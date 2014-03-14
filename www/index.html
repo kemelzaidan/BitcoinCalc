@@ -6,12 +6,17 @@
 	<!-- content goes here-->
 	<!-- content goes here-->
 	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
 
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="app_framework/css/af.ui.min.css">
 		<link rel="stylesheet" type="text/css" href="app_framework/css/icons.min.css">
 		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<link rel="stylesheet" type="text/css" href="css/bitcoinCalc.css">
 		<title>BitcoinCalc</title>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
@@ -33,6 +38,7 @@
 		<script type="application/javascript" src="app_framework/appframework.ui.min.js"></script>
 		<script type="application/javascript" src="js/jquery.min.js"></script>
 		<script type="application/javascript" src="js/index_user_scripts.js"></script>
+		<script type="application/javascript" src="js/numeral.min.js"></script>
 	</head>
 
 	<body id="afui" class="android light">
@@ -73,15 +79,15 @@
 							</div>
 							<span class="uib_shim"></span>
 						</div>
-						<div id="btc2fiat">
+						<div class="no_show" id="btc2fiat">
 							<form class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
 								<div class="col uib_col_3 col-0_12-12" data-uib="layout/col" data-ver="0">
 									<div class="widget-container content-area vertical-col">
 
 										<div class="table-thing with-label widget uib_w_7 d-margins" data-uib="app_framework/input" data-ver="0">
-											<label class="narrow-control label-inline">BTC amount:</label>
+											<label class="narrow-control label-inline" for="btc_amount">BTC amount:</label>
 
-											<input class="wide-control" placeholder="type de amount" type="text">
+											<input class="wide-control" placeholder="type de amount" type="text" id="btc_amount">
 										</div>
 										<div class="table-thing with-label widget uib_w_8 d-margins" data-uib="app_framework/radio_button_group" data-ver="0" data-child-name="af-group-0">
 											<label class="narrow-control label-inline">Group</label>
@@ -103,25 +109,43 @@
 													<label class="content-box" for="af-radio-3">miBTC</label>
 												</div>
 											</div>
-										</div><a class="button widget uib_w_13 d-margins" data-uib="app_framework/button" data-ver="0">Convert</a><span class="uib_shim"></span>
+										</div><a class="button widget uib_w_13 d-margins" data-uib="app_framework/button" data-ver="0" id="convert2fiat_button">Convert</a><span class="uib_shim"></span>
 									</div>
 								</div>
 								<span class="uib_shim"></span>
 							</form>
 						</div>
-						<div id="fiat2btc">
+						<div class="no_show" id="fiat2btc">
 							<div class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
 								<div class="col uib_col_4 col-0_12-12" data-uib="layout/col" data-ver="0">
 									<div class="widget-container content-area vertical-col">
 
 										<div class="table-thing with-label widget uib_w_14 d-margins" data-uib="app_framework/input" data-ver="0">
-											<label class="narrow-control label-inline">Money amount:</label>
-											<input class="wide-control" placeholder="Type the amount" type="text">
-										</div><a class="button widget uib_w_15 d-margins" data-uib="app_framework/button" data-ver="0">Convert</a><span class="uib_shim"></span>
+											<label class="narrow-control label-inline" for="money_amount">Money amount:</label>
+
+											<input class="wide-control" placeholder="Type the amount" type="text" id="money_amount">
+										</div><a class="button widget uib_w_15 d-margins" data-uib="app_framework/button" data-ver="0" id="convert2btc_button">Convert</a><span class="uib_shim"></span>
 									</div>
 								</div>
 								<span class="uib_shim"></span>
 							</div>
+						</div>
+
+						<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_6 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col left">
+
+									<div class="widget uib_w_16 d-margins" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div class="no_show" id="final_conv_block">
+											<p>Your final conversion is:</p>
+											<p id="final_value">Valor da conversão</p>
+										</div>
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
 						</div>
 					</div>
 					<!-- /upage-content -->
