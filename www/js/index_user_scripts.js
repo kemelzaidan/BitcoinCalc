@@ -27,7 +27,10 @@
         $("#convert2btc_button").click(function(evt)
         {
             var amount = numeral($('#money_amount').val());
-            $('#final_value').html(amount);
+//            alert(amount);
+//            alert(typeof(amount));
+            var result = amount.divide(btc_quotation);
+            $('#final_value').html(result.value());
             $('#final_conv_block').show();
         });
 }
