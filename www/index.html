@@ -2,15 +2,6 @@
 <!--HTML5 doctype-->
 <html>
 	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="app_framework/css/af.ui.min.css">
@@ -37,7 +28,7 @@
 		<script type="application/javascript" src="app_framework/appframework.min.js"></script>
 		<script type="application/javascript" src="app_framework/appframework.ui.min.js"></script>
 		<script type="application/javascript" src="js/jquery.min.js"></script>
-        <script type="application/javascript" src="js/jquery.maskMoney.min.js"></script>
+		<script type="application/javascript" src="js/jquery.maskMoney.min.js"></script>
 		<script type="application/javascript" src="js/index_user_scripts.js"></script>
 		<script type="application/javascript" src="js/numeral.min.js"></script>
 	</head>
@@ -64,9 +55,9 @@
 										<div class="widget-container left-receptacle"></div>
 										<div class="widget-container right-receptacle"></div>
 										<div>
-											<p>BTC quotation</p>
+											<p>BTC quotation:</p>
 										</div>
-									</div>
+									</div><a class="button widget uib_w_17 d-margins icon refresh" data-uib="app_framework/button" data-ver="0" id="update_btc_button">Update</a>
 									<div class="widget uib_w_6 d-margins" data-uib="media/text" data-ver="0">
 										<div class="widget-container left-receptacle"></div>
 										<div class="widget-container right-receptacle"></div>
@@ -91,23 +82,23 @@
 											<input class="wide-control money_field" placeholder="type de amount" type="text" id="btc_amount">
 										</div>
 										<div class="table-thing with-label widget uib_w_8 d-margins" data-uib="app_framework/radio_button_group" data-ver="0" data-child-name="af-group-0">
-											<label class="narrow-control label-inline">Group</label>
+											<label class="narrow-control label-inline">Units</label>
 											<div class="wide-control">
 												<div class="widget uib_w_9 d-margins" data-uib="app_framework/radio_button" data-ver="0">
-													<input type="radio" id="af-radio-0" name="af-group-0">
+													<input type="radio" id="af-radio-0" name="af-group-0" value="0" checked>
 													<label class="content-box" for="af-radio-0">BTC</label>
 												</div>
 												<div class="widget uib_w_10 d-margins" data-uib="app_framework/radio_button" data-ver="0">
-													<input type="radio" id="af-radio-1" name="af-group-0">
+													<input type="radio" id="af-radio-1" name="af-group-0" value="1">
 													<label class="content-box" for="af-radio-1">mBTC</label>
 												</div>
 												<div class="widget uib_w_11 d-margins" data-uib="app_framework/radio_button" data-ver="0">
-													<input type="radio" id="af-radio-2" name="af-group-0">
-													<label class="content-box" for="af-radio-2">uBTC</label>
+													<input type="radio" id="af-radio-2" name="af-group-0" value="2">
+													<label class="content-box" for="af-radio-2">&mu;BTC</label>
 												</div>
 												<div class="widget uib_w_12 d-margins" data-uib="app_framework/radio_button" data-ver="0">
-													<input type="radio" id="af-radio-3" name="af-group-0">
-													<label class="content-box" for="af-radio-3">miBTC</label>
+													<input type="radio" id="af-radio-3" name="af-group-0" value="3">
+													<label class="content-box" for="af-radio-3">satoshi</label>
 												</div>
 											</div>
 										</div><a class="button widget uib_w_13 d-margins" data-uib="app_framework/button" data-ver="0" id="convert2fiat_button">Convert</a><span class="uib_shim"></span>
@@ -139,9 +130,12 @@
 									<div class="widget uib_w_16 d-margins" data-uib="media/text" data-ver="0">
 										<div class="widget-container left-receptacle"></div>
 										<div class="widget-container right-receptacle"></div>
-										<div class="no_show" id="final_conv_block">
+										<div class="no_show final_block" id="final_btc_block">
 											<p>Your final conversion is:</p>
-											<p id="final_value">Valor da conversão</p>
+											<p><span id="btc_value"></span> BTC</p>
+                                            <p><span id="mBtc_value"></span> mBTC</p>
+                                            <p><span id="miBtc_value"></span> &mu;BTC</p>
+                                            <p><span id="satoshi_value"></span> satoshis</p>
 										</div>
 									</div><span class="uib_shim"></span>
 								</div>
@@ -160,4 +154,5 @@
 		</div>
 		<!-- /uwrap -->
 	</body>
+
 </html>
