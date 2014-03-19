@@ -265,22 +265,46 @@ body:not(#afui) .upage-outer {
 #afui header > .content-area.left.with-back > :not(#backButton) {
   display: none;
 }
-.uib_row_1:not(.cright) > .col {
-  padding-right: 20px;
+.uib_row_1 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.uib_row_1.cright > .col {
-  padding-left: 20px;
-}
-@media all {
-  .col-0_12-12 {
-    width: auto;
-    float: none !important;
+@media all and (min-width: 0px) {
+  .uib_col_1 {
+    width: 34%;
   }
-  .urow:not(.cright) > .col-0_12-12 {
+  .urow.cright > .uib_col_1 {
+    padding-left: 0px !important;
+  }
+  .urow:not(.cright) > .uib_col_1 {
+    clear: left;
+    padding-left: 0px !important;
+  }
+  .uib_col_13 {
+    width: 66%;
+  }
+  .urow:not(.cright) > .uib_col_13 {
     padding-right: 0px !important;
   }
-  .urow.cright > .col-0_12-12 {
+  .urow.cright > .uib_col_13 {
+    clear: right;
+    padding-right: 0px !important;
+  }
+}
+@media all and (max-width: 0px) {
+  .col-0_4-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
     padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .col-0_8-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 @media all {
@@ -435,5 +459,28 @@ body:not(#afui) .upage-outer {
 @media all and (min-width: 0px) {
   #afui .row-height-4 > .col > .content-area {
     min-height: 100px;
+  }
+}
+.uib_row_5:not(.cright) > .col {
+  padding-right: 20px;
+}
+.uib_row_5.cright > .col {
+  padding-left: 20px;
+}
+@media all {
+  .col-0_12-12 {
+    width: auto;
+    float: none !important;
+  }
+  .urow:not(.cright) > .col-0_12-12 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .col-0_12-12 {
+    padding-left: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  #afui .row-height-5 > .col > .content-area {
+    min-height: 74px;
   }
 }
