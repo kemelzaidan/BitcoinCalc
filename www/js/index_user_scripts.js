@@ -55,7 +55,6 @@
         $("#convert2fiat_button").click(function(evt)
         {
             var amount = numeral($('#btc_amount').val());
-            alert(amount.value());
             var unit_option = $('input[name="af-group-0"]:checked').val();
             switch(unit_option)
             {
@@ -75,9 +74,9 @@
                     var result = intermediate.multiply(btc_quotation);
                     break;
             }
-           // $('#final_money_value').html(result.value());
-            alert(result.value());
-//            $('#final_btc_block').show();
+            $('#final_money_value').html(result.value());
+//            alert(result.value());
+            $('#final_fiat_block').show();
         });
         
         // grab BTC quotation function

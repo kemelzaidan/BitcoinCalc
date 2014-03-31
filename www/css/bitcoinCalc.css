@@ -1,4 +1,16 @@
+@font-face {
+  font-family: 'Trochut';
+  src: url('font/Trochut-Regular.ttf') format('truetype');
+}
+
 .no_show {
     display:none;
 }
-}*/
+
+#afui .money_result {
+    color: #045FB4;
+    font-family: 'Trochut-Regular', 'Tahoma', sans-serif;
+    font-size: 300%;
+    text-align: center;
+    padding: 20px;
+}

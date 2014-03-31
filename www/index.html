@@ -6,6 +6,10 @@
 	<!-- content goes here-->
 	<!-- content goes here-->
 	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
 
 	<head>
 		<meta charset="UTF-8">
@@ -74,7 +78,7 @@
 										<div class="widget-container left-receptacle"></div>
 										<div class="widget-container right-receptacle"></div>
 										<div>
-											<p id='quotation_display'></p>
+											<p class="money_result" id="quotation_display" style="color: #045FB4, font-size:300%"></p>
 										</div>
 									</div><span class="uib_shim"></span>
 								</div>
@@ -149,19 +153,35 @@
 							</div>
 						</div>
 
-						<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+						<div class="grid grid-pad urow uib_row_4 row-height-4 final_block no_show" id="final_btc_block" data-uib="layout/row" data-ver="0">
 							<div class="col uib_col_6 col-0_12-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col left">
 
 									<div class="widget uib_w_16 d-margins" data-uib="media/text" data-ver="0">
 										<div class="widget-container left-receptacle"></div>
 										<div class="widget-container right-receptacle"></div>
-										<div class="no_show final_block" id="final_btc_block">
+										<div>
 											<p>Your final conversion is:</p>
 											<p><span id="btc_value"></span> BTC</p>
 											<p><span id="mBtc_value"></span> mBTC</p>
 											<p><span id="miBtc_value"></span> μBTC</p>
 											<p><span id="satoshi_value"></span> satoshis</p>
+										</div>
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+
+						<div class="grid grid-pad urow uib_row_6 row-height-6 final_block no_show" id="final_fiat_block" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_14 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="widget uib_w_19 d-margins" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p id="final_money_value" class="money_result"></p>
 										</div>
 									</div><span class="uib_shim"></span>
 								</div>
