@@ -507,9 +507,7 @@ body:not(#afui) .upage-outer {
     min-height: 30px;
   }
 }
-
-.money_result {
+.quotation_style {
   color: #045FB4;
-  font-family: 'Trochut-Regular', 'Tahoma', sans-serif;
   font-size: 300%;
 }
